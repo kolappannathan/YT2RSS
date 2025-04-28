@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT2RSS | YouTube RSS Generator</title>
+    <!-- Bootstrap 5 CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-10">
+                <div class="card p-4 shadow-sm">
+                    <h2 class="text-center mb-4">YT2RSS | YouTube RSS Generator</h2>
+                    <div class="mb-3">
+                        <label for="channelId" class="form-label">Enter YouTube Channel ID</label>
+                        <input type="text" id="channelId" class="form-control" placeholder="e.g., UCxxxxx">
+                    </div>
+                    <button onclick="generateRssUrls()" class="btn btn-primary w-100">Generate RSS URLs</button>
+
+                    <div id="rssLinks" style="display: none;">
+                        <hr>
+                        <p><strong>All Videos (Channel Feed):</strong></p>
+                        <a id="allVideosLink" href="#" target="_blank" class="d-block mb-2"></a>
+                        <button onclick="copyLink('allVideosLink')" class="btn btn-secondary btn-sm mb-3">Copy</button>
+
+                        <p><strong>Standard Videos (No shorts & Live streams):</strong></p>
+                        <a id="standardVideosLink" href="#" target="_blank" class="d-block mb-2"></a>
+                        <button onclick="copyLink('standardVideosLink')" class="btn btn-secondary btn-sm mb-3">Copy</button>
+
+                        <p><strong>Shorts Only (Playlist):</strong></p>
+                        <a id="shortsLink" href="#" target="_blank" class="d-block mb-2"></a>
+                        <button onclick="copyLink('shortsLink')" class="btn btn-secondary btn-sm mb-3">Copy</button>
+
+                        <p><strong>Livestreams Only (Playlist):</strong></p>
+                        <a id="livestreamsLink" href="#" target="_blank" class="d-block mb-2"></a>
+                        <button onclick="copyLink('livestreamsLink')" class="btn btn-secondary btn-sm mb-3">Copy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    function generateRssUrls() {
+        const channelId = document.getElementById('channelId').value.trim();
+
+        document.getElementById('rssLinks').style.display = 'none';
+
+        const idPart = channelId.substring(2); // Remove 'UC' from start
+
+        const FeedUrls = {
+            allVideosUrl: `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`,
+            standardVideosUrl: `https://www.youtube.com/feeds/videos.xml?playlist_id=UULF${idPart}`,
+            shortsUrl: `https://www.youtube.com/feeds/videos.xml?playlist_id=UUSH${idPart}`,
+            livestreamsUrl: `https://www.youtube.com/feeds/videos.xml?playlist_id=UULV${idPart}`
+        }
+
+        document.getElementById('allVideosLink').href = FeedUrls.allVideosUrl;
+        document.getElementById('allVideosLink').textContent = FeedUrls.allVideosUrl;
+
+        document.getElementById('standardVideosLink').href = FeedUrls.standardVideosUrl;
+        document.getElementById('standardVideosLink').textContent = FeedUrls.standardVideosUrl;
+
+        document.getElementById('shortsLink').href = FeedUrls.shortsUrl;
+        document.getElementById('shortsLink').textContent = FeedUrls.shortsUrl;
+
+        document.getElementById('livestreamsLink').href = FeedUrls.livestreamsUrl;
+        document.getElementById('livestreamsLink').textContent = FeedUrls.livestreamsUrl;
+
+        document.getElementById('rssLinks').style.display = 'block';
+    }
+
+    function copyLink(linkId) {
+        const link = document.getElementById(linkId).href;
+        navigator.clipboard.writeText(link)
+            .then(() => alert('Link copied to clipboard!'))
+            .catch(err => alert('Failed to copy: ' + err));
+    }
+    </script>
+</body>
+</html>
