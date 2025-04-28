@@ -24,48 +24,56 @@
                     <div id="rssLinks" style="display: none;">
                         <hr>
                         <p><strong>All Videos (Channel Feed):</strong></p>
-                        <a id="allVideosLink" href="#" target="_blank" class="d-block mb-2"></a>
-                        <button onclick="copyLink('allVideosLink')" class="btn btn-secondary btn-sm mb-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-copy">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                            </svg>
-                        </button>
+                        <div class="input-group mb-2">
+                            <input type="text" id="allVideosLink" class="form-control" readonly>
+                            <button onclick="copyLink('allVideosLink')" class="btn btn-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-copy">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                            </button>
+                        </div>
 
                         <p><strong>Standard Videos (No shorts & Live streams):</strong></p>
-                        <a id="standardVideosLink" href="#" target="_blank" class="d-block mb-2"></a>
-                        <button onclick="copyLink('standardVideosLink')" class="btn btn-secondary btn-sm mb-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-copy">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                            </svg>
-                        </button>
+                        <div class="input-group mb-2">
+                            <input type="text" id="standardVideosLink" class="form-control" readonly>
+                            <button onclick="copyLink('standardVideosLink')" class="btn btn-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-copy">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                            </button>
+                        </div>
 
                         <p><strong>Shorts Only (Playlist):</strong></p>
-                        <a id="shortsLink" href="#" target="_blank" class="d-block mb-2"></a>
-                        <button onclick="copyLink('shortsLink')" class="btn btn-secondary btn-sm mb-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-copy">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                            </svg>
-                        </button>
+                        <div class="input-group mb-2">
+                            <input type="text" id="shortsLink" class="form-control" readonly>
+                            <button onclick="copyLink('shortsLink')" class="btn btn-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-copy">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                            </button>
+                        </div>
 
                         <p><strong>Livestreams Only (Playlist):</strong></p>
-                        <a id="livestreamsLink" href="#" target="_blank" class="d-block mb-2"></a>
-                        <button onclick="copyLink('livestreamsLink')" class="btn btn-secondary btn-sm mb-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="feather feather-copy">
-                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                            </svg>
-                        </button>
+                        <div class="input-group mb-2">
+                            <input type="text" id="livestreamsLink" class="form-control" readonly>
+                            <button onclick="copyLink('livestreamsLink')" class="btn btn-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-copy">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -90,23 +98,16 @@
                 livestreamsUrl: `https://www.youtube.com/feeds/videos.xml?playlist_id=UULV${idPart}`
             }
 
-            document.getElementById('allVideosLink').href = FeedUrls.allVideosUrl;
-            document.getElementById('allVideosLink').textContent = FeedUrls.allVideosUrl;
-
-            document.getElementById('standardVideosLink').href = FeedUrls.standardVideosUrl;
-            document.getElementById('standardVideosLink').textContent = FeedUrls.standardVideosUrl;
-
-            document.getElementById('shortsLink').href = FeedUrls.shortsUrl;
-            document.getElementById('shortsLink').textContent = FeedUrls.shortsUrl;
-
-            document.getElementById('livestreamsLink').href = FeedUrls.livestreamsUrl;
-            document.getElementById('livestreamsLink').textContent = FeedUrls.livestreamsUrl;
+            document.getElementById('allVideosLink').value = FeedUrls.allVideosUrl;
+            document.getElementById('standardVideosLink').value = FeedUrls.standardVideosUrl;
+            document.getElementById('shortsLink').value = FeedUrls.shortsUrl;
+            document.getElementById('livestreamsLink').value = FeedUrls.livestreamsUrl;
 
             document.getElementById('rssLinks').style.display = 'block';
         }
 
         function copyLink(linkId) {
-            const link = document.getElementById(linkId).href;
+            const link = document.getElementById(linkId).value;
             navigator.clipboard.writeText(link)
                 .then(() => alert('Link copied to clipboard!'))
                 .catch(err => alert('Failed to copy: ' + err));
